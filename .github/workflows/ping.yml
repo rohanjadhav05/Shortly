@@ -3,6 +3,12 @@ name: Ping Render
 on:
   schedule:
     - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      url:
+        description: The URL to ping
+        required: true
+        default: https://shortly-oe7u.onrender.com/health
 
 jobs:
   ping:
